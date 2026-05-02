@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Admissions 2026–27 — Afaq Academy{% endblock %}
+
+{% block content %}
+
+<div class="page-hero">
+  <div class="admission-open-badge" style="margin-bottom:1rem;">
+    <div class="admission-dot"></div>
+    🎉 Admissions 2026–27 Now Open!
+  </div>
+  <h1>Apply to Afaq Academy</h1>
+  <p>Begin your journey to excellence today. Limited seats — Apply Now!</p>
+</div>
+
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start;">
+
+      <!-- Info -->
+      <div class="fade-in-up">
+
+        <div style="background: linear-gradient(135deg, rgba(200,146,42,0.10), rgba(200,146,42,0.03)); border-radius: var(--radius); padding: 2rem; border: 2px solid rgba(200,146,42,0.20); margin-bottom: 2rem;">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--blue-dark);margin-bottom:1.2rem;">📅 Admission Schedule 2026–27</h3>
+          <div style="display:flex;flex-direction:column;gap:0.8rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(200,146,42,0.15);">
+              <span style="color:var(--text-mid);font-size:0.9rem;">Application Period</span>
+              <span style="color:var(--blue);font-weight:700;font-size:0.9rem;">Jan – March 2026</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(200,146,42,0.15);">
+              <span style="color:var(--text-mid);font-size:0.9rem;">Entrance Test</span>
+              <span style="color:var(--blue);font-weight:700;font-size:0.9rem;">April 2026</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(200,146,42,0.15);">
+              <span style="color:var(--text-mid);font-size:0.9rem;">Result Announcement</span>
+              <span style="color:var(--blue);font-weight:700;font-size:0.9rem;">April 2026</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;">
+              <span style="color:var(--text-mid);font-size:0.9rem;">Session Start</span>
+              <span style="color:var(--green);font-weight:700;font-size:0.9rem;">May 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-soft); border-left: 4px solid var(--blue);">
+          <h4 style="color:var(--blue-dark);margin-bottom:0.8rem;">📞 Contact for Admission</h4>
+          <p style="color:var(--text-mid);font-size:0.9rem;margin-bottom:0.5rem;">Principal Muhammad Ejaz: <a href="tel:03006751154" style="color:var(--blue);font-weight:700;">0300-6751154</a></p>
+          <p style="color:var(--text-mid);font-size:0.9rem;">Vice Principal Khadija Nargis: <a href="tel:03347311737" style="color:var(--blue);font-weight:700;">0334-7311737</a></p>
+          <p style="color:var(--text-light);font-size:0.82rem;margin-top:0.8rem;">Office Hours: Monday – Saturday, 7:00 AM – 4:00 PM</p>
+          <div style="margin-top:1rem;">
+            <a href="https://wa.me/923006751154" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:white;text-decoration:none;padding:0.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:0.85rem;box-shadow:0 4px 14px rgba(37,211,102,0.30);margin-right:0.5rem;margin-bottom:0.5rem;">
+              💬 WhatsApp Principal
+            </a>
+            <a href="https://wa.me/923347311737" target="_blank"
+               style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:white;text-decoration:none;padding:0.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:0.85rem;box-shadow:0 4px 14px rgba(37,211,102,0.30);">
+              💬 WhatsApp Vice Principal
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Application Form -->
+      <div class="contact-form fade-in-up">
+        <h3>Online Admission Enquiry Form</h3>
+        <p style="color:var(--text-light);font-size:0.88rem;margin-bottom:1.5rem;">Fill out the form below and our team will contact you within 24 hours.</p>
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert-success" style="margin-bottom:1.2rem;">✅ {{ message }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <form method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label>Student's Full Name *</label>
+              <input type="text" name="student_name" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Father's Name *</label>
+              <input type="text" name="father_name" placeholder="Father's name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Class Applying For *</label>
+            <select name="class_applying" required>
+              <option value="">Select Class</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option>
+              <option>Class 9 (Science)</option><option>Class 9 (Arts)</option>
+              <option>Class 10 (Science)</option><option>Class 10 (Arts)</option>
+              <option>Class 11 – Pre-Medical</option><option>Class 11 – Pre-Engineering</option>
+              <option>Class 11 – ICS</option><option>Class 11 – FA</option>
+              <option>Class 12 – Pre-Medical</option><option>Class 12 – Pre-Engineering</option>
+              <option>Class 12 – ICS</option><option>Class 12 – FA</option>
+            </select>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label>Parent Phone Number *</label>
+              <input type="tel" name="name" placeholder="03XX-XXXXXXX" required>
+            </div>
+            <div class="form-group">
+              <label>Student's Date of Birth</label>
+              <input type="date" name="dob">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Previous School</label>
+            <input type="text" name="prev_school" placeholder="Name of previous school">
+          </div>
+
+          <div class="form-group">
+            <label>Parent Email Address</label>
+            <input type="email" name="email" placeholder="email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label>Additional Message / Questions</label>
+            <textarea name="message" placeholder="Any specific questions or requirements..." style="min-height:90px;"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Admission Enquiry 🎓</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Fee Structure -->
+<section style="background: white;">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <div class="section-tag">Affordability</div>
+      <h2 class="section-title">Fee Structure</h2>
+      <p class="section-subtitle">Quality education at affordable rates. Scholarships available for deserving students.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;" class="fade-in-up">
+      <div style="background:linear-gradient(135deg,var(--sky),white);border-radius:var(--radius);padding:2rem;text-align:center;border:2px solid rgba(26,111,168,0.12);">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">📚</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--blue-dark);margin-bottom:0.3rem;">Primary</h3>
+        <p style="color:var(--text-light);font-size:0.82rem;margin-bottom:1rem;">Class 1 – 5</p>
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--blue);">Rs. 1,500</div>
+        <p style="color:var(--text-light);font-size:0.8rem;">per month</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#e8f5e9,white);border-radius:var(--radius);padding:2rem;text-align:center;border:2px solid rgba(39,174,96,0.15);">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🔭</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--blue-dark);margin-bottom:0.3rem;">Middle</h3>
+        <p style="color:var(--text-light);font-size:0.82rem;margin-bottom:1rem;">Class 6 – 8</p>
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#27ae60;">Rs. 2,000</div>
+        <p style="color:var(--text-light);font-size:0.8rem;">per month</p>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(200,146,42,0.10),white);border-radius:var(--radius);padding:2rem;text-align:center;border:2px solid rgba(200,146,42,0.20);">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">⚗️</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--blue-dark);margin-bottom:0.3rem;">Matric</h3>
+        <p style="color:var(--text-light);font-size:0.82rem;margin-bottom:1rem;">Class 9 – 10</p>
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold);">Rs. 2,500</div>
+        <p style="color:var(--text-light);font-size:0.8rem;">per month</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#fce4ec,white);border-radius:var(--radius);padding:2rem;text-align:center;border:2px solid rgba(233,30,99,0.12);">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🎓</div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--blue-dark);margin-bottom:0.3rem;">Intermediate</h3>
+        <p style="color:var(--text-light);font-size:0.82rem;margin-bottom:1rem;">Class 11 – 12</p>
+        <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#c2185b;">Rs. 3,000</div>
+        <p style="color:var(--text-light);font-size:0.8rem;">per month</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(26,111,168,0.06),rgba(26,111,168,0.02));border-radius:var(--radius-sm);text-align:center;border:1px dashed rgba(26,111,168,0.20);" class="fade-in-up">
+      <p style="color:var(--text-mid);font-size:0.92rem;">🏆 <strong>Merit Scholarships available</strong> for top performers. Special fee concessions for siblings and deserving families. Contact the office for details.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

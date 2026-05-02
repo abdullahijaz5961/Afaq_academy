@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Afaq Academy — Premier Academy in Rahim Yar Khan{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <div class="admission-banner">
+        <div class="admission-dot"></div>
+        <span>🎓 Admissions 2026–27 Now Open</span>
+      </div>
+
+      <h1 class="hero-title">
+        Where Every Student<br>
+        Achieves <span class="highlight">Excellence</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Afaq Academy is Rahim Yar Khan's leading educational institution, providing world-class education from Class 1 to Class 12 under the expert leadership of Principal Muhammad Ejaz.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num" data-target="1500" data-suffix="+">0+</span>
+          <span class="stat-label">Students</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="50" data-suffix="+">0+</span>
+          <span class="stat-label">Teachers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="98" data-suffix="%">0%</span>
+          <span class="stat-label">Pass Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="200" data-suffix="+">0+</span>
+          <span class="stat-label">Board Toppers</span>
+        </div>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="{% url 'admissions' %}" class="btn-primary">
+          🎓 Admissions 2026–27
+        </a>
+        <a href="{% url 'contact' %}" class="btn-secondary">
+          📞 Contact Us
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <!-- Central Logo -->
+        <div class="logo-central">
+          <div class="logo-inner">
+            <span class="logo-arabic">آفاق</span>
+            <span class="logo-star">★</span>
+            <span class="logo-en">Afaq Academy</span>
+          </div>
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="floating-card">
+          <div class="fc-icon" style="background:#e8f4fd;">📐</div>
+          <span>Mathematics</span>
+        </div>
+        <div class="floating-card">
+          <div class="fc-icon" style="background:#fff3e0;">⚗️</div>
+          <span>Chemistry</span>
+        </div>
+        <div class="floating-card">
+          <div class="fc-icon" style="background:#e8f5e9;">🔬</div>
+          <span>Physics</span>
+        </div>
+        <div class="floating-card">
+          <div class="fc-icon" style="background:#fce4ec;">📖</div>
+          <span>Top Results</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">The Afaq Advantage</h2>
+      <p class="section-subtitle">We believe every child has unlimited potential. Our mission is to unlock it through expert teaching and modern methods.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">🏆</div>
+        <h3>Board Toppers</h3>
+        <p>Our students consistently achieve top positions in Board examinations with exceptional academic results year after year.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">👨‍🏫</div>
+        <h3>Expert Faculty</h3>
+        <p>Highly qualified and experienced teachers dedicated to individual student success with subject-matter expertise.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">🔬</div>
+        <h3>Science Labs</h3>
+        <p>Fully equipped Physics, Chemistry, and Biology laboratories providing hands-on practical experience.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">📱</div>
+        <h3>Modern Teaching</h3>
+        <p>Smart classroom technology, digital resources, and innovative teaching methodologies for 21st-century learners.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">🌟</div>
+        <h3>Co-Curricular</h3>
+        <p>Sports, debates, science competitions, and cultural activities for holistic personality development.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">💬</div>
+        <h3>Parent Connect</h3>
+        <p>Regular parent-teacher meetings, progress reports, and open communication to keep families informed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS PREVIEW -->
+<section class="courses-section">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <div class="section-tag">Academic Programs</div>
+      <h2 class="section-title">Programs We Offer</h2>
+      <p class="section-subtitle">Comprehensive curriculum from Class 1 to Class 12 across Science, Arts and Commerce streams.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+      <div class="feature-card fade-in-up" style="text-align:center;">
+        <div class="feature-icon" style="margin: 0 auto 1rem;">📚</div>
+        <h3>Primary (Class 1–5)</h3>
+        <p>Strong foundation in English, Urdu, Mathematics, General Science, and Social Studies.</p>
+      </div>
+      <div class="feature-card fade-in-up" style="text-align:center;">
+        <div class="feature-icon" style="margin: 0 auto 1rem;">🔭</div>
+        <h3>Middle (Class 6–8)</h3>
+        <p>In-depth study of Mathematics, Science, Urdu, English, Islamiyat and Pakistan Studies.</p>
+      </div>
+      <div class="feature-card fade-in-up" style="text-align:center;">
+        <div class="feature-icon" style="margin: 0 auto 1rem;">⚗️</div>
+        <h3>Matric (Class 9–10)</h3>
+        <p>Science & Arts streams with focus on Board preparation, practicals and past papers.</p>
+      </div>
+      <div class="feature-card fade-in-up" style="text-align:center;">
+        <div class="feature-icon" style="margin: 0 auto 1rem;">🎓</div>
+        <h3>F.Sc / FA (Class 11–12)</h3>
+        <p>Pre-Medical, Pre-Engineering, ICS, and FA with expert tuition and entry test prep.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="leadership">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <div class="section-tag">Leadership</div>
+      <h2 class="section-title">Meet Our Leadership</h2>
+      <p class="section-subtitle">Guided by experienced educators committed to academic excellence and student success.</p>
+    </div>
+
+    <div class="leadership-grid fade-in-up">
+      <div class="leader-card principal">
+        <div class="leader-avatar">
+          ME
+          <div class="leader-badge">⭐</div>
+        </div>
+        <div class="leader-role">Founder & Principal</div>
+        <div class="leader-name">Muhammad Ejaz</div>
+        <p class="leader-desc">A visionary educator with over 20 years of experience in academic leadership. Mr. Ejaz founded Afaq Academy with the mission to provide quality education to the students of Rahim Yar Khan.</p>
+        <a href="tel:03006751154" class="leader-contact">📞 0300-6751154</a>
+      </div>
+
+      <div class="leader-card vice">
+        <div class="leader-avatar">
+          KN
+          <div class="leader-badge">🌸</div>
+        </div>
+        <div class="leader-role">Vice Principal</div>
+        <div class="leader-name">Khadija Nargis</div>
+        <p class="leader-desc">A highly qualified and dedicated educator, Ms. Khadija Nargis serves as Vice Principal, overseeing academic affairs and student welfare. Her compassionate leadership inspires both students and faculty.</p>
+        <a href="tel:03347311737" class="leader-contact">📞 0334-7311737</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS BANNER -->
+<section class="admissions-banner">
+  <div class="admission-open-badge">
+    <div class="admission-dot"></div>
+    🎉 Admissions 2026–27 Are Now Open!
+  </div>
+  <h2>Begin Your Journey to Excellence</h2>
+  <p>Limited seats available. Enroll your child at Afaq Academy for a bright academic future.</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; position:relative;">
+    <a href="{% url 'admissions' %}" class="btn-white">🎓 Apply for Admission 2026–27</a>
+    <a href="tel:03006751154" class="btn-white" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.40);">📞 Call Us Now</a>
+  </div>
+</section>
+
+<!-- CONTACT SNIPPET -->
+<section class="contact-section">
+  <div class="container">
+    <div class="section-header fade-in-up">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Visit Afaq Academy</h2>
+    </div>
+
+    <div class="contact-grid fade-in-up">
+      <div class="contact-info">
+        <h3>We're Here to Help</h3>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div class="contact-item-text">
+            <strong>Academy Address</strong>
+            <span>47-D Khawaja Bangles, Abbasia Town, Rahim Yar Khan, Punjab, Pakistan</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div class="contact-item-text">
+            <strong>Principal (Muhammad Ejaz)</strong>
+            <a href="tel:03006751154">0300-6751154</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div class="contact-item-text">
+            <strong>Vice Principal (Khadija Nargis)</strong>
+            <a href="tel:03347311737">0334-7311737</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <div class="contact-item-text">
+            <strong>Office Hours</strong>
+            <span>Monday – Saturday: 7:00 AM – 4:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="e.g. 0300-0000000">
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea name="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message 📨</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-section">
+  <iframe
+    class="map-embed"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.123456789!2d70.2956!3d28.4202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAbbasia+Town+Rahim+Yar+Khan!5e0!3m2!1sen!2spk!4v1234567890"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Afaq Academy Location">
+  </iframe>
+</div>
+
+{% endblock %}

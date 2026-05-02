@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Afaq Academy — Excellence in Education{% endblock %}</title>
+  <meta name="description" content="Afaq Academy — Premier educational institution in Rahim Yar Khan offering quality education from Class 1 to Class 12. Admissions 2026–27 Open!">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .logo-svg { width: 44px; height: 44px; }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="{% url 'home' %}" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 3L28 10V22L16 29L4 22V10L16 3Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <text x="16" y="21" text-anchor="middle" fill="white" font-family="Playfair Display, serif" font-size="13" font-weight="800">A</text>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Afaq Academy</span>
+      <span class="nav-logo-sub">Since 2010 · Excellence</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    <li><span class="nav-admission-btn" style="cursor:default;">🎓 Admissions Open</span></li>
+  </ul>
+
+  <div class="hamburger" role="button" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Django Messages -->
+{% if messages %}
+<div class="messages-container" style="padding-top: 80px;">
+  {% for message in messages %}
+    <div class="alert-success">✅ {{ message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="{% url 'home' %}" class="nav-logo" style="display:inline-flex; margin-bottom: 0.5rem;">
+        <div class="nav-logo-icon">A</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Afaq Academy</span>
+          <span class="nav-logo-sub">Excellence in Education</span>
+        </div>
+      </a>
+      <p>Nurturing bright minds and shaping the future of Pakistan through quality education since 2010.</p>
+      <div style="margin-top: 1.2rem; display:flex; gap:0.8rem;">
+        <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,0.10);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;font-size:0.9rem;transition:background 0.2s;" onmouseover="this.style.background='rgba(200,146,42,0.40)'" onmouseout="this.style.background='rgba(255,255,255,0.10)'">f</a>
+        <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,0.10);border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;font-size:0.9rem;transition:background 0.2s;" onmouseover="this.style.background='rgba(200,146,42,0.40)'" onmouseout="this.style.background='rgba(255,255,255,0.10)'">in</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About Us</a></li>
+        <li><a href="{% url 'admissions' %}">Admissions 2026–27</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="{% url 'admissions' %}">Primary (1–5)</a></li>
+        <li><a href="{% url 'admissions' %}">Middle (6–8)</a></li>
+        <li><a href="{% url 'admissions' %}">Matric (9–10)</a></li>
+        <li><a href="{% url 'admissions' %}">F.Sc / FA (11–12)</a></li>
+        <li><a href="{% url 'admissions' %}">Science Stream</a></li>
+        <li><a href="{% url 'admissions' %}">Arts Stream</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="#">📍 47-D Khawaja Bangles, Abbasia Town, RYK</a></li>
+        <li><a href="tel:03006751154">📞 0300-6751154</a></li>
+        <li><a href="tel:03347311737">📞 0334-7311737</a></li>
+        <li><a href="#">✉ info@afaqacademy.edu.pk</a></li>
+        <li><a href="#">🕐 Mon–Sat: 7AM – 4PM</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Afaq Academy. All rights reserved. | 47-D Khawaja Bangles, Abbasia Town, Rahim Yar Khan</p>
+    <p>Designed & Developed with ❤️ by <span class="developer">Abdullah Ijaz</span></p>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
